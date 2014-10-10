@@ -1,8 +1,8 @@
-<div class="table-responsive">
+    <div class="table-responsive">
     <table class="table table-hover table-striped table-bordered table-condensed">
         <thead>
             <tr>
-                <th>#</th>
+                <!-- <th>#</th> -->
                 <th>USER</th>
                 <th>UNITS</th>
                 <th>BILL DATE</th>
@@ -23,8 +23,17 @@
             ?>
                 <tr>
                     <form action="generate_bill.php" method="post" name="form_gen_bill" onsubmit="return checkInp()">
-                        <!-- <td><?php echo $row['uid'] ?></td> -->
-
+                    <?php
+                        $query3 = "SELECT bdate as bdate1 from bill ,user WHERE user.id=bill.uid and user.id={$row['uid']} ORDER BY bill.id DESC ";
+                        $result3 = mysqli_query($con,$query3);
+                        $flag=0;
+                        while($row2 = mysqli_fetch_assoc($result3)){
+                            if($row2['bdate1']==$row['bdate']) $flag=1;
+                        }
+                        
+                        if($flag==0)
+                        {
+                     ?>
                         <input type="hidden" name="uid" value=<?php echo $row['uid'] ?> >
                         <input type="hidden" name="uname" value=<?php echo $row['uname'] ?> >
                         
@@ -43,22 +52,27 @@
                         <td>
                             <button type="submit" name="generate_bill" class="btn btn-success form-control">GENERATE BILL  </button>
                         </td>
+                    <?php 
+                        } 
+                    ?>
                     </form>
                 </tr>                
-                <?php } ?>
+                <?php 
+                    } 
+                ?>
             </tbody>                
         </table>
         <?php include("paging2.php");  ?>
     </div><!-- ./table-responsive -->
     
 <script>
-    function checkInp()
-    {
-          var x=document.forms["form_gen_bill"]["units"].value;
-          if (isNaN(x)) 
-          {
-            alert("Must input numbers");
-            return false;
-          }
-    }
+    // function checkInp()
+    // {
+    //       var x=document.forms["form_gen_bill"]["units"].value;
+    //       if (isNaN(x)) 
+    //       {
+    //         alert("Must input numbers");
+    //         return false;
+    //       }
+    // }
 </script>

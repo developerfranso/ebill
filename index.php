@@ -1,7 +1,9 @@
 <?php 
 require_once("Includes/config.php");
 require_once("Includes/session.php");
-
+// if ($count===0) {
+//     $err_login="There were some problem";
+// }
 if(isset($_SESSION['logged']))
 {
     if ($_SESSION['logged'] == true)
@@ -12,7 +14,10 @@ if(isset($_SESSION['logged']))
         elseif ($_SESSION['account']=="user") {
                 header("Location:user/index.php");
             }
-    }    
+    }  
+    else  {
+        header("Location:../index.php");
+      }  
 }
 
 if(isset($_POST['login_submit'])) {
@@ -39,15 +44,15 @@ if(isset($_POST['login_submit'])) {
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <!-- <link href="assets/css/font-awesome.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"> -->
 
 
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
 
     <!-- Fonts from Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -138,22 +143,23 @@ if(isset($_POST['login_submit'])) {
 
     <!--=======================JS=========================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-
+    <script src="assets/js/jquery-1.11.0.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <!-- jQuery Version 1.11.0 -->
-    <script src="../assets/js/jquery-1.11.0.js"></script>
+
+    <script src="assets/js/custom.js"></script>
     <script>
+
     function validateForm() {
-        var x = document.forms["myForm"]["email"].value;
-        var atpos = x.indexOf("@");
-        var dotpos = x.lastIndexOf(".");
-        if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-            alert("Not a valid e-mail address");
-            return false;
-        }
-    }
-    </script>
+            var x = document.forms["myForm"]["email"].value;
+            var atpos = x.indexOf("@");
+            var dotpos = x.lastIndexOf(".");
+            if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+                alert("Not a valid e-mail address");
+                return false;
+            }
+        }  </script> 
 
     
 </body>

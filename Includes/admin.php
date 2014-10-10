@@ -1,7 +1,8 @@
 <?php 
+    // require_once("config.php");
 
     function retrieve_bills_generated($id,$offset, $rowsperpage) {
-        require_once("config.php");global $con;
+        global $con;
         $query  = "SELECT user.name AS user, bill.bdate AS bdate , bill.units AS units , bill.amount AS amount , bill.id as bid ";
         $query .= ", bill.ddate AS ddate, bill.status AS status ";
         $query .= " FROM user , bill ";
@@ -17,7 +18,7 @@
     }
 
     function retrieve_bill_data($offset, $rowsperpage){
-        require_once("config.php");global $con;
+        global $con;
         $query  = "SELECT curdate() AS bdate , adddate( curdate(),INTERVAL 30 DAY ) AS ddate , user.id AS uid , user.name AS uname FROM user ";
         $query .= " LIMIT {$offset}, {$rowsperpage} ";
         // echo $query;
@@ -30,7 +31,7 @@
 
     function retrieve_complaints_history($id,$offset,$rowsperpage)
     {
-        require_once("config.php");global $con;
+        global $con;
         $query  = "SELECT complaint.id AS id , complaint.complaint AS complaint , complaint.status AS status , user.name AS uname ";
         $query .= "FROM user , complaint ";
         $query .= "WHERE complaint.uid=user.id AND status='NOT PROCESSED' ";
@@ -48,7 +49,7 @@
 
     function retrieve_users_detail($id,$offset, $rowsperpage)
     {
-        require_once("config.php");global $con;
+        global $con;
         $query  = "SELECT * FROM user ";
         $query .= " LIMIT {$offset}, {$rowsperpage} ";
         $result = mysqli_query($con,$query);
@@ -60,10 +61,10 @@
 
     function retrieve_admin_stats($id)
     {
-        require_once("config.php");global $con;
+        global $con;
         $query1  = " SELECT count(id) AS unprocessed_bills FROM bill  WHERE status = 'PENDING'  AND aid = {$id} ";
         $query2  = " SELECT count(id) AS generated_bills FROM bill  WHERE aid = {$id} " ;
-        $query3  = " SELECT count(id) AS unprocessed_complaints from complaint where status='NOT PROCESSED' AND aid = {$id} ";
+        $query3  = " SELECT count(id) AS unprocessed_complaints from complaint where status='NOT PROCESSED' ";
         // echo $query;
         
         $result1 = mysqli_query($con,$query1);
@@ -88,7 +89,7 @@
     }
 
     function retrieve_users_defaulting($id){
-        require_once("config.php");global $con;
+        global $con;
 
         //TODO : adjust for transaction .payable for delayed action!!!!!!! 
         //query for late
@@ -119,7 +120,7 @@
     }
 
     function insert_into_transaction($id,$amount){
-            require_once("config.php");global $con;
+            global $con;
             $query = "INSERT INTO transaction (bid,payable,pdate,status) ";
             $query .= "VALUES ({$id}, {$amount} , NULL , 'PENDING' )";
             // echo $query3;

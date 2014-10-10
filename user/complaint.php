@@ -2,9 +2,11 @@
     require_once('head_html.php'); 
     require_once('../Includes/config.php'); 
     require_once('../Includes/session.php'); 
-    require_once('../Includes/user.php'); 
+    require_once('../Includes/user.php');
+    if ($logged==false) {
+         header("Location:../index.php");
+    } 
 ?>
-
 
 <body>
 

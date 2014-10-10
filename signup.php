@@ -15,6 +15,7 @@ function test_input($data) {
         $data = htmlspecialchars($data);
         return $data;
     }
+
 if(isset($_POST["reg_submit"])) {
         $email = test_input($_POST['email']); 
         $password = test_input($_POST["inputPassword"]);
@@ -99,20 +100,16 @@ if(isset($_POST["reg_submit"])) {
         if (empty($_POST["contactNo"])) {
             $flag=1;
             $contactNo = "";
-            echo "error here";
+            // echo "error here";
         } else {
             $contactNo = test_input($_POST["contactNo"]);
             if(!preg_match("/^d{10}$/", $_POST["contactNo"])){
                 $phoneErr="10 digit phone no allowed.";
                 // $flag=1;
-                echo "or here";
+                // echo "or here";
                 echo $_POST['contactNo'];
             }
         }
-
-        // PASSWORD VALIDATION
-        // TODO
-
 
         // Only if succeed from the validation thourough put  
         echo $flag; 
@@ -131,6 +128,23 @@ if(isset($_POST["reg_submit"])) {
     }
 ?>
 
+<?php
+    // if(isset($flag)) {
+    //     if($flag === 0) {
+    //         echo '
+    //             <table class="table"> 
+    //             <tr class="success">Account Created</tr>
+    //             </table>
+    //         ';
+    //     } elseif ($flag === 1) {
+    //         echo '
+    //             <table class="table"> 
+    //             <tr class="danger">There were errors in the form.</tr>
+    //             </table>
+    //         ';
+    //     } 
+    // }
+?>
 <form action="signup.php" method="post" class="form-horizontal" role="form" onsubmit="return validateForm()">
     <div class="row form-group">
         <div class="col-md-12">
@@ -170,7 +184,7 @@ if(isset($_POST["reg_submit"])) {
     </div>
     <div class="form-group">
         <div class="col-md-10">
-            <button type="submit" name="reg_submit" class="btn btn-primary">Register</button>
+            <button name="reg_submit" class="btn btn-primary">Register</button>
         </div>
     </div>
 
