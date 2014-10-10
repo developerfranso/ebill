@@ -46,10 +46,11 @@
         global $con;
         $query  = "SELECT * FROM user ";
         $result = mysqli_query($con, $query);
-        // if (!$result)   
-        //     {
-        //         die('Error: ' . mysqli_error($con));
-        //     }  
+
+        if (!$result)   
+            {
+                die('Error: ' . mysqli_error($con));
+            }  
         return $result;
     }
 
