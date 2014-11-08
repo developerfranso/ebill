@@ -42,8 +42,8 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO admin (name,email,pass) VALUES
-("admin1","admin1@bolt.com","adminadminadmin"),
-("admin2","admin2@bolt.com","adminadmin");
+("admin1","admin1@bolt.com","admin"),
+("admin2","admin2@bolt.com","admin");
 
 
 -- --------------------------------------------------------
@@ -68,11 +68,11 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 INSERT INTO user (name,email,phone,pass,address) VALUES
 ("Ameen Khan","ameenkhan07@gmail.com",9654327656,"qwerty","Jamia nagar"),
-("Abhishek Bhatnagar","abhishek@gmail.com",999999999,"qwerty1","Ghaziabad"),
-("Anzal","anzal@gmail.com",9888888888,"qwerty2","Batla House"),
-("Manaf","manaf@gmail.com",9777777777,"qwerty3","Shaheen Bagh"),
-("abc","abc@gmail.com",9666666666,"qwerty7","Jamia");
-
+("Abhishek Bhatnagar","abhishek@gmail.com",999999999,"qwerty","Ghaziabad"),
+("Anzal","anzal@gmail.com",9888888888,"qwerty","Batla House"),
+("Manaf","manaf@gmail.com",9777777777,"qwerty","Shaheen Bagh"),
+("abc","abc@gmail.com",9666666666,"qwerty","Jamia"),
+("xyz","xyz@gmail.com",9999988888,"qwerty","Dwarka");
 
 
 -- --------------------------------------------------------

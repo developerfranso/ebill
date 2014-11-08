@@ -43,7 +43,7 @@
                                     <table class="table table-hover table-striped table-bordered table-condensed">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>Bill No.</th>
                                                 <th>Bill Date</th>
                                                 <th>UNITS Consumed</th>
                                                 <th>Amount</th>
@@ -62,21 +62,17 @@
 
                                             $result = retrieve_bills_history($_SESSION['uid'],$offset, $rowsperpage);
                                             // Initialising #
-                                            $counter = 1;
                                             while($row = mysqli_fetch_assoc($result)){
                                             ?>
                                                 <tr>
-                                                    <td height="40"><?php echo $counter ?></td>
-                                                    <td><?php echo $row['bdate'] ?></td>
+                                                    <td height="50"><?php echo $row['id'] ?></td>
+                                                    <td height="50"><?php echo $row['bdate'] ?></td>
                                                     <td><?php echo $row['units'] ?></td>
                                                     <td><?php echo $row['amount'] ?></td>
                                                     <td><?php echo $row['ddate'] ?></td>
                                                     <td><?php echo $row['status'] ?></td>
                                                 </tr>
-                                            <?php 
-                                                $counter=$counter+1;
-                                            }
-                                            ?>
+                                            <?php  } ?>
                                         </tbody>
                                     </table>     
                                     <?php include("paging2.php");  ?>                     
@@ -89,7 +85,7 @@
                                     <table class="table table-hover table-striped table-bordered table-condensed">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <!-- <th>#</th> -->
                                                 <th>Bill Date</th>
                                                 <th>UNITS Consumed</th>
                                                 <th>Due Date</th>
@@ -116,10 +112,10 @@
                                             ?>
                                                 <tr>
                                                     <form action="transact_bill.php" method="post">
-                                                    <td height="40"><?php echo $counter ?></td>
+                                                    <!-- <td height="40"><?php echo $counter ?></td> -->
 
                                                     <input type="hidden" name="bdate" value=<?php echo $row['bdate'] ?> >
-                                                    <td><?php echo $row['bdate'] ?></td>
+                                                    <td td height="50"><?php echo $row['bdate'] ?></td>
 
                                                     <input type="hidden" name="units" value=<?php echo $row['units'] ?> >
                                                     <td><?php echo $row['units'] ?></td>

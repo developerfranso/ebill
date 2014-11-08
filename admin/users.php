@@ -33,10 +33,10 @@
                           <li class="active">Details</li>
                         </ol>
                         <div class="table-responsive" style="padding-top: 0">
-                                <table class="table table-hover table-striped table-bordered table-condensed">
+                                <table class="table table-hover table-bordered table-condensed">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>User No.</th>
                                             <th>User Name</th>
                                             <th>EMAIL</th>
                                             <th>PHONE NO</th>
@@ -57,7 +57,7 @@
                                             while($row = mysqli_fetch_assoc($result)){
                                             ?>
                                                 <tr>
-                                                    <td height="40"><?php echo $row['id'] ?></td>
+                                                    <td height="50"><?php echo $row['id'] ?></td>
                                                     <td><?php echo $row['name'] ?></td>
                                                     <td><?php echo $row['email'] ?></td>
                                                     <td><?php echo $row['phone'] ?></td>

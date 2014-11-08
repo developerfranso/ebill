@@ -23,12 +23,12 @@
             ?>
                 <tr>
                     <form action="generate_bill.php" method="post" name="form_gen_bill" onsubmit="return checkInp()">
-                        <td height="40"><?php echo $row['uid'] ?></td>
+                        <!-- <td><?php echo $row['uid'] ?></td> -->
 
                         <input type="hidden" name="uid" value=<?php echo $row['uid'] ?> >
                         <input type="hidden" name="uname" value=<?php echo $row['uname'] ?> >
                         
-                        <td>
+                        <td height="50">
                             <?php echo $row['uname'] ?>
                         </td>
                         <td>                                                

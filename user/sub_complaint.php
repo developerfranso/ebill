@@ -4,7 +4,7 @@
     
     $id=$_SESSION['uid'];
     $comp=$_POST["complaint"];
-    $aid    = rand(1,2);
+    $aid    = 0
     $stat   ="NOT PROCESSED"; 
     
     if(isset($_POST["complaint"]) && !empty($_POST["complaint"]))

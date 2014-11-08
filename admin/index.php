@@ -151,7 +151,7 @@
                                             </div>
                                             <div class="modal-body text-center">
                                                 <p><h4>ARE YOU SURE?</h4></p>
-                                                <p>Do it today or forever hold your speech!</p>
+                                                <!-- <p>Do it today or forever hold your speech!</p> -->
                                             </div>
                                             <div class="modal-footer">
                                                 <form action="dash_defaulting_users.php" method="post">                                               
@@ -172,7 +172,7 @@
                                             </div>
                                             <div class="modal-body text-center">
                                                 <p><h4>ARE YOU SURE?</h4></p>
-                                                <p>Do it today or forever hold your speech!</p>
+                                                <!-- <p>Do it today or forever hold your speech!</p> -->
                                             </div>
                                             <div class="modal-footer">
                                                 <form action="dash_defaulting_users.php" method="post">

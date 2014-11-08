@@ -2,7 +2,7 @@
 
     function retrieve_bills_generated($id,$offset, $rowsperpage) {
         require_once("config.php");global $con;
-        $query  = "SELECT user.name AS user, bill.bdate AS bdate , bill.units AS units , bill.amount AS amount ";
+        $query  = "SELECT user.name AS user, bill.bdate AS bdate , bill.units AS units , bill.amount AS amount , bill.id as bid ";
         $query .= ", bill.ddate AS ddate, bill.status AS status ";
         $query .= " FROM user , bill ";
         $query .= " WHERE user.id=bill.uid AND aid={$id} ";
@@ -33,9 +33,9 @@
         require_once("config.php");global $con;
         $query  = "SELECT complaint.id AS id , complaint.complaint AS complaint , complaint.status AS status , user.name AS uname ";
         $query .= "FROM user , complaint ";
-        $query .= "WHERE complaint.uid=user.id AND status='NOT PROCESSED' AND complaint.aid={$id} ";
+        $query .= "WHERE complaint.uid=user.id AND status='NOT PROCESSED' ";
         $query .= "ORDER BY complaint.id desc  ";
-        $query .= " LIMIT {$offset}, {$rowsperpage} ";
+        $query .= "LIMIT {$offset}, {$rowsperpage} ";
 
         $result = mysqli_query($con,$query);
         if($result === FALSE) {

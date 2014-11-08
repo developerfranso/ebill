@@ -37,7 +37,7 @@
                             <table class="table table-hover table-striped table-bordered table-condensed">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>Complaint No.</th>
                                         <th>Complaint</th>
                                         <th>STATUS</th>
                                     </tr>
@@ -56,8 +56,8 @@
                                     while($row = mysqli_fetch_assoc($result)){
                                     ?>
                                         <tr>
-                                            <td height="40"><?php echo $row['id']  ?></td>
-                                            <td><?php echo $row['complaint'] ?></td>
+                                            <td><?php echo $row['id']  ?></td>
+                                            <td height="50"><?php echo $row['complaint'] ?></td>
                                             <td><?php echo $row['status'] ?></td>
                                         </tr>
                                     <?php } ?>

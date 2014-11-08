@@ -3,6 +3,7 @@
     function retrieve_complaints ($id,$offset, $rowsperpage) {
         include("config.php");
         $query = "SELECT * FROM complaint where uid={$id} ";
+        $query .= "ORDER BY id DESC ";
         $query .= "LIMIT {$offset}, {$rowsperpage}";
         $result1 = mysqli_query($con,$query);
         return $result1;
@@ -41,7 +42,7 @@
     }
 
     function retrieve_user_details($id) {
-        include 'config.php';
+        include("config.php");
         $query  = "SELECT * FROM user ";
         $result = mysqli_query($con,$query);
         if (!$result)

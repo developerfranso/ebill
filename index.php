@@ -61,11 +61,6 @@ if(isset($_POST['login_submit'])) {
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand" href="#"><i class="fa fa-bolt"></i><b>Bolt</b></a>
             </div>
             <div class="navbar-collapse collapse" >
@@ -103,7 +98,7 @@ if(isset($_POST['login_submit'])) {
         <div class="row mt centered">
             <div class="col-lg-6 col-lg-offset-3">
                 <h1>How this Portal woks</h1>
-                <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora esse, inventore asperiores necessitatibus porro, beatae dolore numquam odit voluptatum fugiat voluptatem doloremque et rem, repellat eum facere. Blanditiis, distinctio.</h3>
+                <!-- <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora esse, inventore asperiores necessitatibus porro, beatae dolore numquam odit voluptatum fugiat voluptatem doloremque et rem, repellat eum facere. Blanditiis, distinctio.</h3> -->
             </div>
         </div>
         <!-- /row -->
@@ -119,7 +114,7 @@ if(isset($_POST['login_submit'])) {
             <div class="col-lg-4">
                 <img src="assets/img/ser02.png" width="180" alt="">
                 <h4>2 - Peruse Bills</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet fuga deserunt similique, iure tenetur debitis perspiciatis, modi aut dolores illum iste, in error animi accusantium possimus rerum dolor facilis sequi.</p>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet fuga deserunt similique, iure tenetur debitis perspiciatis, modi aut dolores illum iste, in error animi accusantium possimus rerum dolor facilis sequi.</p> -->
 
             </div>
             <!--/col-lg-4 -->
@@ -127,7 +122,7 @@ if(isset($_POST['login_submit'])) {
             <div class="col-lg-4">
                 <img src="assets/img/ser03.png" width="180" alt="">
                 <h4>3 - Transact</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam ducimus, vitae tempore recusandae explicabo sapiente eligendi voluptates repellat voluptatem porro. Facere porro, odit exercitationem, ducimus quis quam quasi id magnam.</p>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam ducimus, vitae tempore recusandae explicabo sapiente eligendi voluptates repellat voluptatem porro. Facere porro, odit exercitationem, ducimus quis quam quasi id magnam.</p> -->
 
             </div>
             <!--/col-lg-4 -->
@@ -142,7 +137,7 @@ if(isset($_POST['login_submit'])) {
         <div class="row mt centered">
             <div class="col-lg-6 col-lg-offset-3">
                 <h1>Bolt is for Everyone.</h1>
-                <h3>Some descript goes here</h3>
+                <!-- <h3>Some descript goes here</h3> -->
             </div>
         </div>
         <!-- /row -->

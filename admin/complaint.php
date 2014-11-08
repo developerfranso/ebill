@@ -35,7 +35,7 @@
                                 <table class="table table-hover table-striped table-bordered table-condensed">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>Complaint No.</th>
                                             <th>User</th>
                                             <th>COMPLAINT</th>
                                             <th>STATUS</th>
@@ -52,13 +52,11 @@
                                             $numrows = $row1[0];
                                             include("paging1.php");
                                             $result = retrieve_complaints_history($_SESSION['aid'],$offset, $rowsperpage);
-                                            // Initialising #
-                                            $counter = 1;
                                             while($row = mysqli_fetch_assoc($result)){
                                             ?>
                                                 <tr>
-                                                    <td height="40"><?php echo $counter ?></td>
-                                                    <td><?php echo $row['uname'] ?></td>
+                                                    <td><?php echo $row['id'] ?></td>
+                                                    <td height="50"><?php echo $row['uname'] ?></td>
                                                     <td><?php echo $row['complaint'] ?></td>
                                                     <td><?php echo $row['status'] ?></td>
                                                     <td width="70">
@@ -70,7 +68,6 @@
                                                     </td>
                                                 </tr>
                                             <?php 
-                                                $counter=$counter+1;
                                             }
                                         ?>
                                     </tbody>

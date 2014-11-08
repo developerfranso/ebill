@@ -39,7 +39,7 @@
                             <table class="table table-hover table-striped table-bordered table-condensed">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>Transaction No.</th>
                                         <th>Bill Date</th>
                                         <th>Amount</th>
                                         <th>Dues (if any)</th>
@@ -60,16 +60,23 @@
                                     while($row = mysqli_fetch_assoc($result)){
                                     ?>
                                         <tr>
-                                            <td height="40"><?php echo $row['id'] ?></td>
-                                            <td><?php echo $row['bdate'] ?></td>
+                                            <td>
+                                                <?php 
+                                                    if($row['pdate']!=NULL) echo $row['id'] ;
+                                                    else echo "-";
+                                                 ?>
+                                            </td>
+                                            <!-- <?php echo $row['id'] ?></td> -->
+                                            <td height="50"><?php echo $row['bdate'] ?></td>
                                             <td><?php echo $row['amount'] ?></td>
                                             <td><?php echo $row['dues'] ?></td>
                                             <td><?php echo $row['payable'] ?></td>
                                             <td>
-                                            <?php 
-                                                if($row['pdate']!=NULL) echo $row['pdate'];
-                                                else echo "TRANSACTION PENDING";
-                                             ?></td>
+                                                <?php 
+                                                    if($row['pdate']!=NULL) echo $row['pdate'];
+                                                    else echo "TRANSACTION PENDING";
+                                                ?>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

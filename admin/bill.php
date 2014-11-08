@@ -45,7 +45,7 @@
                                     <table class="table table-hover table-striped table-bordered table-condensed">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>Bill No.</th>
                                                 <th>User</th>
                                                 <th>Bill Date</th>
                                                 <th>UNITS Consumed</th>
@@ -63,13 +63,11 @@
                                             $numrows = $row1[0];
                                             include("paging1.php");
                                             $result = retrieve_bills_generated($_SESSION['aid'],$offset, $rowsperpage);
-                                            // Initialising #
-                                            $counter = 1;
                                             while($row = mysqli_fetch_assoc($result)){
                                             ?>
                                                 <tr>
-                                                    <td height="40"><?php echo $counter ?></td>
-                                                    <td><?php echo $row['user'] ?></td>
+                                                    <td><?php echo $row['id']?></td>
+                                                    <td height="50"><?php echo $row['user'] ?></td>
                                                     <td><?php echo $row['bdate'] ?></td>
                                                     <td><?php echo $row['units'] ?></td>
                                                     <td><?php echo $row['amount'] ?></td>
@@ -77,7 +75,6 @@
                                                     <td><?php echo $row['status'] ?></td>
                                                 </tr>
                                             <?php 
-                                                $counter=$counter+1;
                                             }
                                             ?>
                                         </tbody>
