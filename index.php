@@ -39,13 +39,15 @@ if(isset($_POST['login_submit'])) {
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="assets/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
 
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
 
     <!-- Fonts from Google Fonts -->
-    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'> -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,7 +63,7 @@ if(isset($_POST['login_submit'])) {
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"><i class="fa fa-bolt"></i><b>Bolt</b></a>
+                <a class="navbar-brand" href="index.php"><b>Bolt</b></a>
             </div>
             <div class="navbar-collapse collapse" >
                 <?php include("login.php"); ?>
@@ -98,7 +100,7 @@ if(isset($_POST['login_submit'])) {
         <div class="row mt centered">
             <div class="col-lg-6 col-lg-offset-3">
                 <h1>How this Portal woks</h1>
-                <!-- <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora esse, inventore asperiores necessitatibus porro, beatae dolore numquam odit voluptatum fugiat voluptatem doloremque et rem, repellat eum facere. Blanditiis, distinctio.</h3> -->
+                <h3></h3>
             </div>
         </div>
         <!-- /row -->
@@ -107,78 +109,38 @@ if(isset($_POST['login_submit'])) {
             <div class="col-lg-4">
                 <img src="assets/img/ser01.png" width="180" alt="">
                 <h4>1 - Login</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda impedit architecto a labore eum saepe fugiat ex culpa, ab dolor asperiores eligendi dolore temporibus, suscipit quo magni odio iusto quasi?</p>
+                <p></p>
             </div>
             <!--/col-lg-4 -->
 
             <div class="col-lg-4">
                 <img src="assets/img/ser02.png" width="180" alt="">
                 <h4>2 - Peruse Bills</h4>
-                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet fuga deserunt similique, iure tenetur debitis perspiciatis, modi aut dolores illum iste, in error animi accusantium possimus rerum dolor facilis sequi.</p> -->
-
+                <p></p>
             </div>
             <!--/col-lg-4 -->
 
             <div class="col-lg-4">
                 <img src="assets/img/ser03.png" width="180" alt="">
                 <h4>3 - Transact</h4>
-                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam ducimus, vitae tempore recusandae explicabo sapiente eligendi voluptates repellat voluptatem porro. Facere porro, odit exercitationem, ducimus quis quam quasi id magnam.</p> -->
-
+                <p></p>
             </div>
             <!--/col-lg-4 -->
+
         </div>
         <!-- /row -->
     </div>
     <!-- /container -->
 
-
-    <div class="container">
-        <hr>
-        <div class="row mt centered">
-            <div class="col-lg-6 col-lg-offset-3">
-                <h1>Bolt is for Everyone.</h1>
-                <!-- <h3>Some descript goes here</h3> -->
-            </div>
-        </div>
-        <!-- /row -->
-
-        <! -- CAROUSEL -->
-        <div class="row mt centered">
-            <div class="col-lg-6 col-lg-offset-3">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img src="assets/img/p01.png" alt="">
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/p02.png" alt="">
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/p03.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /col-lg-8 -->
-        </div>
-        <!-- /row -->
-    </div>
-    <! --/container -->
     <?php 
     require_once("footer.php");
     ?>
 
-
     <!--=======================JS=========================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../assets/js/bootstrap.min.js"></script>
     <!-- jQuery Version 1.11.0 -->
     <script src="../assets/js/jquery-1.11.0.js"></script>
     <script>
@@ -193,8 +155,7 @@ if(isset($_POST['login_submit'])) {
     }
     </script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../assets/js/bootstrap.min.js"></script>
+    
 </body>
 
 </html>
