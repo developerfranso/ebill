@@ -1,7 +1,8 @@
 <?php 
+    // require_once("config.php");
     
     function retrieve_complaints ($id,$offset, $rowsperpage) {
-        include("config.php");
+        global $con;
         $query = "SELECT * FROM complaint where uid={$id} ";
         $query .= "ORDER BY id DESC ";
         $query .= "LIMIT {$offset}, {$rowsperpage}";
@@ -10,7 +11,7 @@
     }
 
     function retrieve_bills_history($id,$offset, $rowsperpage) {
-        include("config.php");
+        global $con;
         $query = "SELECT * FROM bill where uid={$id} ";
         $query .= "ORDER BY bdate DESC ";
         $query .= "LIMIT {$offset}, {$rowsperpage} ";
@@ -19,7 +20,7 @@
     }
 
     function retrieve_bills_due($id,$offset, $rowsperpage) {
-        include("config.php");
+        global $con;
         $query  = "SELECT bill.bdate AS bdate, bill.units AS units, bill.ddate AS ddate, transaction.payable AS payable, ";
         $query .= " bill.amount AS amount ,transaction.payable-bill.amount AS dues , bill.id AS id ";
         $query .= "FROM bill , transaction ";
@@ -30,7 +31,7 @@
         return $result;
     }
     function retrieve_transaction_history($id,$offset, $rowsperpage) {
-        include("config.php");
+        global $con;
         $query  = "SELECT transaction.id AS id , bill.bdate AS bdate, transaction.pdate AS pdate, transaction.payable AS payable, ";
         $query .= " bill.amount AS amount ,transaction.payable-bill.amount AS dues ";
         $query .= "FROM bill , transaction ";
@@ -42,10 +43,10 @@
     }
 
     function retrieve_user_details($id) {
-        include("config.php");
+        global $con;
         $query  = "SELECT * FROM user ";
-        $result = mysqli_query($con,$query);
-        if (!$result)
+        $result = mysqli_query($con, $query);
+        if (!$result)   
             {
                 die('Error: ' . mysqli_error($con));
             }  
@@ -54,7 +55,7 @@
 
     function retrieve_user_stats($id)
     {
-        include("config.php");
+        global $con;
         $query1  = " SELECT count(id) AS unprocessed_bills FROM bill  WHERE status = 'PENDING'  AND uid = {$id} ";
         $query2  = " SELECT count(id) AS payed_bills FROM bill  WHERE uid = {$id} AND status='PROCESSED'" ;
         $query3  = " SELECT count(id) AS unprocessed_complaints from complaint where status='NOT PROCESSED' AND uid = {$id} ";

@@ -5,7 +5,6 @@
     require_once('../Includes/admin.php'); 
 ?>
 
-
 <body>
 
     <div id="wrapper">
@@ -66,7 +65,7 @@
                                             while($row = mysqli_fetch_assoc($result)){
                                             ?>
                                                 <tr>
-                                                    <td><?php echo $row['id']?></td>
+                                                    <td><?php echo $row['bid']?></td>
                                                     <td height="50"><?php echo $row['user'] ?></td>
                                                     <td><?php echo $row['bdate'] ?></td>
                                                     <td><?php echo $row['units'] ?></td>

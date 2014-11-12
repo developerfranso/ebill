@@ -5,7 +5,6 @@
     require_once('../Includes/user.php'); 
 ?>
 
-
 <body>
 
     <div id="wrapper">

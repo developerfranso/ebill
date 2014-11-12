@@ -1,6 +1,7 @@
 <!-- email = email i.e one and the same thing -->
 <!-- convert to mysqli -->
 <?php  
+    require_once("config.php");
     session_start();
     $logged = false;
     //checking if anyone(admin/email)is logged in or not
@@ -18,7 +19,6 @@
     if($logged != true)
     {
         $email = "";
-        require_once("config.php");
         if (isset($_POST['email']) && isset($_POST['pass']))
         {
             $email=$_POST['email'];
@@ -42,6 +42,7 @@
                 $_SESSION['uid']=$row['id'];
                 $_SESSION['email'] = $email;
                 $_SESSION['account']="user";
+                // echo "Yadpde";
                 header("Location:user/index.php");
             }  
             // admin

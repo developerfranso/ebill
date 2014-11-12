@@ -39,8 +39,8 @@ if(isset($_POST['login_submit'])) {
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <!-- <link href="assets/css/font-awesome.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"> -->
 
 
     <!-- Custom styles for this template -->
